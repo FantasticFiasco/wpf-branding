@@ -37,9 +37,12 @@
         <!-- Input -->
         <TextBox
             Grid.ColumnSpan="4"
+            VerticalContentAlignment="Center"
+            TextAlignment="Right"
             IsReadOnly="True"
+            FontSize="50"
             Text="{Binding Input}" />
-        
+
         <!-- Numberic input -->
         <Button
             Grid.Row="1"
