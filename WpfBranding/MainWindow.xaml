@@ -2,7 +2,8 @@
     x:Class="WpfBranding.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="MainWindow"
+    xmlns:localization="http://www.fantasticfiasco.com/wpfbranding/localization"
+    Title="{x:Static localization:Translations.ApplicationName}"
     Height="400"
     Width="300"
     DataContext="{Binding Main, Source={StaticResource Locator}}">
@@ -10,7 +11,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Brand;component/ControlStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Brand;component/Styles/ControlStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>        
     </Window.Resources>
