@@ -1,6 +1,6 @@
 using GalaSoft.MvvmLight;
 
-namespace WpfBranding.ViewModel
+namespace WpfBranding
 {
     public class MainViewModel : ViewModelBase
     {

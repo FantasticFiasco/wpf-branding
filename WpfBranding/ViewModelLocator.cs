@@ -1,7 +1,7 @@
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
-namespace WpfBranding.ViewModel
+namespace WpfBranding
 {
     /// <summary>
     /// This class contains static references to all the view models in the
