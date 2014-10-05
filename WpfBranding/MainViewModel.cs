@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using WpfBranding.Operators;
+using WpfBranding.MathematicalOperators;
 
 namespace WpfBranding
 {
@@ -12,15 +12,18 @@ namespace WpfBranding
         private readonly ICommand numericInputCommand;
         private readonly ICommand numericSeparatorInputCommand;
         private readonly ICommand operatorCommand;
+        private readonly ICommand calculateCommand;
 
         private string input;
         private string leftValue;
+        private IMathematicalOperator mathematicalOperator;
 
         public MainViewModel()
         {
             numericInputCommand = new RelayCommand<string>(ExecuteNumericInput);
             numericSeparatorInputCommand = new RelayCommand(ExecuteNumericSeparatorInput);
-            operatorCommand = new RelayCommand<Operator>(ExecuteOperator);
+            operatorCommand = new RelayCommand<MathematicalOperatorType>(ExecuteOperator);
+            calculateCommand = new RelayCommand(ExecuteCalculate);
             input = string.Empty;
         }
 
@@ -58,6 +61,11 @@ namespace WpfBranding
             get { return operatorCommand; }
         }
 
+        public ICommand CalculateCommand
+        {
+            get { return calculateCommand; }
+        }
+
         private void ExecuteNumericInput(string number)
         {
             Input += number;
@@ -71,40 +79,51 @@ namespace WpfBranding
             }
         }
 
-        private void ExecuteOperator(OperatorType operatorType)
+        private void ExecuteOperator(MathematicalOperatorType mathematicalOperatorType)
         {
-            if (leftValue == null)
+            if (mathematicalOperator == null)
             {
-                leftValue = input;
-                input = string.Empty;
-                return;
+                leftValue = Input;
             }
-            
-            IOperator @operator;
-
-            switch (operatorType)
+            else
             {
-                case OperatorType.Add:
-                    @operator = new AddOperator();
-                    break;
+                leftValue = mathematicalOperator
+                    .Calculate(double.Parse(leftValue), double.Parse(Input))
+                    .ToString();
+            }
 
-                case OperatorType.Subtract:
-                    @operator = new SubtractOperator();
-                    break;
+            mathematicalOperator = CreateOperator(mathematicalOperatorType);
+            Input = string.Empty;
+        }
 
-                case OperatorType.Multiply:
-                    @operator = new MultiplyOperator();
-                    break;
+        private void ExecuteCalculate()
+        {
+            Input = mathematicalOperator
+                .Calculate(double.Parse(leftValue), double.Parse(Input))
+                .ToString();
 
-                case OperatorType.Divide:
-                    @operator = new DivideOperator();
-                    break;
+            mathematicalOperator = null;
+        }
+
+        private IMathematicalOperator CreateOperator(MathematicalOperatorType mathematicalOperatorType)
+        {
+            switch (mathematicalOperatorType)
+            {
+                case MathematicalOperatorType.Add:
+                    return new AddOperator();
+
+                case MathematicalOperatorType.Subtract:
+                    return new SubtractOperator();
+
+                case MathematicalOperatorType.Multiply:
+                    return new MultiplyOperator();
+
+                case MathematicalOperatorType.Divide:
+                    return new DivideOperator();
 
                 default:
-                    throw new ArgumentException("Unsupported operator type: " + operatorType, "operatorType");
+                    throw new ArgumentException("Unsupported mathematical operator type: " + mathematicalOperatorType, "mathematicalOperatorType");
             }
-
-
         }
     }
 }

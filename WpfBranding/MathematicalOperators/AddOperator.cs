@@ -1,6 +1,6 @@
-﻿namespace WpfBranding.Operators
+﻿namespace WpfBranding.MathematicalOperators
 {
-    public class AddOperator : IOperator
+    public class AddOperator : IMathematicalOperator
     {
         public double Calculate(double leftValue, double rightValue)
         {

@@ -68,12 +68,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MainViewModel.cs" />
-    <Compile Include="Operators\AddOperator.cs" />
-    <Compile Include="Operators\DivideOperator.cs" />
-    <Compile Include="Operators\IOperator.cs" />
-    <Compile Include="Operators\MultiplyOperator.cs" />
-    <Compile Include="Operators\OperatorType.cs" />
-    <Compile Include="Operators\SubtractOperator.cs" />
+    <Compile Include="MathematicalOperators\AddOperator.cs" />
+    <Compile Include="MathematicalOperators\DivideOperator.cs" />
+    <Compile Include="MathematicalOperators\IMathematicalOperator.cs" />
+    <Compile Include="MathematicalOperators\MultiplyOperator.cs" />
+    <Compile Include="MathematicalOperators\MathematicalOperatorType.cs" />
+    <Compile Include="MathematicalOperators\SubtractOperator.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
