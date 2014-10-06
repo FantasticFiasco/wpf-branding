@@ -15,8 +15,9 @@ namespace WpfBranding
         private readonly ICommand calculateCommand;
 
         private string input;
-        private string leftValue;
+        private string memory;
         private IMathematicalOperator mathematicalOperator;
+        private bool clearOnNextNumericInput;
 
         public MainViewModel()
         {
@@ -68,11 +69,15 @@ namespace WpfBranding
 
         private void ExecuteNumericInput(string number)
         {
+            ClearInputIfNeeded();
+
             Input += number;
         }
 
         private void ExecuteNumericSeparatorInput()
         {
+            ClearInputIfNeeded();
+
             if (!Input.Contains(NumberDecimalSeparator))
             {
                 Input += NumberDecimalSeparator;
@@ -81,28 +86,36 @@ namespace WpfBranding
 
         private void ExecuteOperator(MathematicalOperatorType mathematicalOperatorType)
         {
-            if (mathematicalOperator == null)
-            {
-                leftValue = Input;
-            }
-            else
-            {
-                leftValue = mathematicalOperator
-                    .Calculate(double.Parse(leftValue), double.Parse(Input))
-                    .ToString();
-            }
+            memory = mathematicalOperator == null ?
+                Input :
+                Calculate();
 
             mathematicalOperator = CreateOperator(mathematicalOperatorType);
-            Input = string.Empty;
+            clearOnNextNumericInput = true;
         }
 
         private void ExecuteCalculate()
         {
-            Input = mathematicalOperator
-                .Calculate(double.Parse(leftValue), double.Parse(Input))
-                .ToString();
-
+            Input = Calculate();
             mathematicalOperator = null;
+        }
+
+        private void ClearInputIfNeeded()
+        {
+            if (clearOnNextNumericInput)
+            {
+                Input = string.Empty;
+                clearOnNextNumericInput = false;
+            }
+        }
+
+        private string Calculate()
+        {
+            double parsedMemory = double.Parse(memory);
+            double parsedInput = double.Parse(Input);
+            double result = mathematicalOperator.Calculate(parsedMemory, parsedInput);
+
+            return result.ToString(CultureInfo.CurrentCulture);
         }
 
         private IMathematicalOperator CreateOperator(MathematicalOperatorType mathematicalOperatorType)
