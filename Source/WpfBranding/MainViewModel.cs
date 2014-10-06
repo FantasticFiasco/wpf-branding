@@ -86,9 +86,12 @@ namespace WpfBranding
 
         private void ExecuteOperator(MathematicalOperatorType mathematicalOperatorType)
         {
-            memory = mathematicalOperator == null ?
-                Input :
-                Calculate();
+            if (!clearOnNextNumericInput)
+            {
+                memory = mathematicalOperator == null ?
+                    Input :
+                    Calculate();    
+            }
 
             mathematicalOperator = CreateOperator(mathematicalOperatorType);
             clearOnNextNumericInput = true;
