@@ -11,6 +11,12 @@
     <!-- CONTROL BACKGROUND -->
     <SolidColorBrush x:Key="BaseColor" Color="#99000000"></SolidColorBrush>
 
+    <!-- LIGHT BACKGROUND -->
+    <LinearGradientBrush x:Key="LightBackground" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Offset="0" Color="#FF9999AA"></GradientStop>
+        <GradientStop Offset="1" Color="#FFDDDDFF"></GradientStop>
+    </LinearGradientBrush>
+
     <!-- GLASS EFFECT -->
     <LinearGradientBrush x:Key="GlassFX" StartPoint=".5,0" EndPoint=".5,.5">
         <GradientStop Offset="1" Color="#33DDDDDD"></GradientStop>
@@ -40,6 +46,11 @@
         <DoubleAnimation x:Name="AnimGlow" BeginTime="00:00:00" Storyboard.TargetName="GlowRectangle" Duration="00:00:00.250" From="0" To="1" Storyboard.TargetProperty="Opacity">
         </DoubleAnimation>
     </Storyboard>
+
+    <!-- WINDOW -->
+    <Style x:Key="DefaultWindowStyle" TargetType="{x:Type Window}" BasedOn="{StaticResource DefaultWindowStyle}">
+        <Setter Property="Background" Value="{StaticResource LightBackground}" />
+    </Style>
 
     <!-- TEXTBOX -->
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource DefaultTextBoxStyle}">
@@ -88,30 +99,35 @@
             <Setter.Value>
                 <ControlTemplate x:Name="tmpltButton">
                     <Grid>
-                        <Border x:Name="BaseRectangle" 
-                                    Background="{StaticResource BaseColor}" 
-                                    CornerRadius="10,0,10,0">
+                        <Border
+                            x:Name="BaseRectangle" 
+                            Background="{StaticResource BaseColor}" 
+                            CornerRadius="10,0,10,0">
                         </Border>
-                        <Border x:Name="GlassRectangle" 
-                                    Background="{StaticResource GlassFX}" 
-                                    CornerRadius="10,0,10,0">
+                        <Border
+                            x:Name="GlassRectangle" 
+                            Background="{StaticResource GlassFX}" 
+                            CornerRadius="10,0,10,0">
                         </Border>
-                        <Border x:Name="GlowRectangle" 
-                                    Background="{StaticResource GlowFX}" 
-                                    CornerRadius="10,0,10,0" 
-                                    Opacity="0">
+                        <Border
+                            x:Name="GlowRectangle" 
+                            Background="{StaticResource GlowFX}" 
+                            CornerRadius="10,0,10,0" 
+                            Opacity="0">
                         </Border>
-                        <Border x:Name="ButtonBorder" 
-                                    CornerRadius="10,0,10,0" 
-                                    BorderBrush="Black" 
-                                    Opacity="1"  
-                                    BorderThickness="1">
+                        <Border
+                            x:Name="ButtonBorder" 
+                            CornerRadius="10,0,10,0" 
+                            BorderBrush="Black" 
+                            Opacity="1"  
+                            BorderThickness="1">
                         </Border>
-                        <ContentPresenter x:Name="ButtonContent" 
-                                              Opacity=".7" 
-                                              Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" 
-                                              HorizontalAlignment="center" 
-                                              VerticalAlignment="center">
+                        <ContentPresenter
+                            x:Name="ButtonContent" 
+                            Opacity=".7" 
+                            Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" 
+                            HorizontalAlignment="center" 
+                            VerticalAlignment="center">
                         </ContentPresenter>
                     </Grid>
                     <ControlTemplate.Triggers>

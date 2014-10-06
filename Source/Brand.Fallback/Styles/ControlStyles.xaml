@@ -13,5 +13,8 @@
         <Setter Property="FontSize" Value="50" />
     </Style>
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource DefaultTextBoxStyle}" />
+    
+    <Style x:Key="DefaultWindowStyle" TargetType="{x:Type Window}" />
+    <Style TargetType="{x:Type Window}" BasedOn="{StaticResource DefaultWindowStyle}" />
 
 </ResourceDictionary>

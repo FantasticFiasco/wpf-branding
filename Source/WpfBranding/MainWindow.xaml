@@ -9,6 +9,7 @@
     Width="300"
     ResizeMode="NoResize"
     Icon="pack://application:,,,/Brand;component/Graphics/App.ico"
+    Style="{DynamicResource DefaultWindowStyle}"
     DataContext="{Binding Main, Source={StaticResource Locator}}">
     
     <Window.Resources>
