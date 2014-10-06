@@ -9,6 +9,8 @@ namespace WpfBranding
 {
     public class MainViewModel : ViewModelBase
     {
+        private const string InitialValue = "0";
+
         private readonly ICommand numericInputCommand;
         private readonly ICommand numericSeparatorInputCommand;
         private readonly ICommand operatorCommand;
@@ -25,7 +27,7 @@ namespace WpfBranding
             numericSeparatorInputCommand = new RelayCommand(ExecuteNumericSeparatorInput);
             operatorCommand = new RelayCommand<MathematicalOperatorType>(ExecuteOperator);
             calculateCommand = new RelayCommand(ExecuteCalculate);
-            input = string.Empty;
+            input = InitialValue;
         }
 
         public string Input
@@ -71,7 +73,14 @@ namespace WpfBranding
         {
             ClearInputIfNeeded();
 
-            Input += number;
+            if (Input == InitialValue)
+            {
+                Input = number;
+            }
+            else
+            {
+                Input += number;    
+            }
         }
 
         private void ExecuteNumericSeparatorInput()
@@ -99,6 +108,9 @@ namespace WpfBranding
 
         private void ExecuteCalculate()
         {
+            if (mathematicalOperator == null)
+                return;
+
             Input = Calculate();
             mathematicalOperator = null;
         }
