@@ -6,4 +6,149 @@
         <ResourceDictionary Source="pack://application:,,,/Brand.Fallback;component/Styles/ControlStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <!-- Styles shamelessly copied from http://www.codeproject.com/Articles/85896/WPF-Customize-your-Application-with-Styles-and-C -->
+
+    <!-- CONTROL BACKGROUND -->
+    <SolidColorBrush x:Key="BaseColor" Color="#99000000"></SolidColorBrush>
+
+    <!-- GLASS EFFECT -->
+    <LinearGradientBrush x:Key="GlassFX" StartPoint=".5,0" EndPoint=".5,.5">
+        <GradientStop Offset="1" Color="#33DDDDDD"></GradientStop>
+        <GradientStop Offset="1" Color="#33000000"></GradientStop>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GlassFXDisabled" StartPoint=".5,0" EndPoint=".5,.5">
+        <GradientStop Offset="1" Color="#33BBBBBB"></GradientStop>
+        <GradientStop Offset="1" Color="#11000000"></GradientStop>
+    </LinearGradientBrush>
+
+    <!-- GLOW EFFECT -->
+    <RadialGradientBrush x:Key="GlowFX" GradientOrigin=".5,1" Center=".5,1">
+        <GradientStop Offset="0" Color="#990000FF"></GradientStop>
+        <GradientStop Offset=".5" Color="#660000DD"></GradientStop>
+        <GradientStop Offset="1" Color="#33000000"></GradientStop>
+    </RadialGradientBrush>
+    <RadialGradientBrush x:Key="GlowFXPressed" GradientOrigin=".5,1" Center=".5,1">
+        <GradientStop Offset="0" Color="#660000CC"></GradientStop>
+        <GradientStop Offset="1.2" Color="#33FFFFFF"></GradientStop>
+    </RadialGradientBrush>
+
+    <!-- GLOW ANIMATION -->
+    <Storyboard x:Key="GlowOut">
+        <DoubleAnimation x:Name="AnimGlowOut" BeginTime="00:00:00" Storyboard.TargetName="GlowRectangle" Duration="00:00:00.250" From="1" To="0" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
+    </Storyboard>
+    <Storyboard x:Key="GlowIn">
+        <DoubleAnimation x:Name="AnimGlow" BeginTime="00:00:00" Storyboard.TargetName="GlowRectangle" Duration="00:00:00.250" From="0" To="1" Storyboard.TargetProperty="Opacity">
+        </DoubleAnimation>
+    </Storyboard>
+
+    <!-- TEXTBOX -->
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource DefaultTextBoxStyle}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="tmpltTextBox">
+                    <Grid>
+                        <Rectangle x:Name="BaseRectangle" Fill="{StaticResource BaseColor}" RadiusX="3" RadiusY="3"></Rectangle>
+                        <Rectangle x:Name="GlassRectangle" RadiusX="5" RadiusY="5" Fill="{StaticResource GlassFX}"></Rectangle>
+                        <Rectangle x:Name="GlowRectangle" RadiusX="5" RadiusY="5" Opacity="0" Fill="{StaticResource GlowFX}"></Rectangle>
+                        <Border x:Name="BorderIntern" Opacity="1" BorderBrush="Black" BorderThickness="2" CornerRadius="3" Margin="1,1,-1,-1"></Border>
+                        <Border x:Name="BorderExtern" Opacity="1" BorderBrush="#FF333333" BorderThickness="1" CornerRadius="3"></Border>
+                        <ScrollViewer x:Name="PART_ContentHost" Opacity=".7" Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="{Binding Path=HorizontalAlignment, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="{Binding Path=VerticalAlignment, RelativeSource={RelativeSource TemplatedParent}}" Width="{Binding Path=Width, RelativeSource={RelativeSource TemplatedParent}}" Height="{Binding Path=Height, RelativeSource={RelativeSource TemplatedParent}}"></ScrollViewer>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="TextBox.LostFocus">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource GlowOut}"></BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="TextBox.GotFocus">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource GlowIn}"></BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="PART_ContentHost" Value=".3"></Setter>
+                            <Setter Property="Opacity" TargetName="BorderExtern" Value=".5"></Setter>
+                            <Setter Property="Fill" TargetName="GlassRectangle" Value="{StaticResource GlassFXDisabled}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- BUTTON -->
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButtonStyle}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Name="tmpltButton">
+                    <Grid>
+                        <Border x:Name="BaseRectangle" 
+                                    Background="{StaticResource BaseColor}" 
+                                    CornerRadius="10,0,10,0">
+                        </Border>
+                        <Border x:Name="GlassRectangle" 
+                                    Background="{StaticResource GlassFX}" 
+                                    CornerRadius="10,0,10,0">
+                        </Border>
+                        <Border x:Name="GlowRectangle" 
+                                    Background="{StaticResource GlowFX}" 
+                                    CornerRadius="10,0,10,0" 
+                                    Opacity="0">
+                        </Border>
+                        <Border x:Name="ButtonBorder" 
+                                    CornerRadius="10,0,10,0" 
+                                    BorderBrush="Black" 
+                                    Opacity="1"  
+                                    BorderThickness="1">
+                        </Border>
+                        <ContentPresenter x:Name="ButtonContent" 
+                                              Opacity=".7" 
+                                              Content="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" 
+                                              HorizontalAlignment="center" 
+                                              VerticalAlignment="center">
+                        </ContentPresenter>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource GlowOut}"></BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource GlowIn}"></BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.LostFocus">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource GlowOut}"></BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.GotFocus">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource GlowIn}"></BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="GlowRectangle" Value="{StaticResource GlowFXPressed}"></Setter>
+                            <Setter Property="Opacity" TargetName="ButtonContent" Value="1"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="ButtonContent" Value=".3"></Setter>
+                            <Setter Property="Opacity" TargetName="ButtonBorder" Value=".5"></Setter>
+                            <Setter Property="Background" TargetName="GlassRectangle" Value="{StaticResource GlassFXDisabled}"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 </ResourceDictionary>
