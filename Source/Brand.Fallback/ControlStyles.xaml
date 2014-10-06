@@ -6,5 +6,10 @@
         <Setter Property="Margin" Value="3" />
     </Style>
     <Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}" />
-    
+
+    <Style x:Key="DefaultTextBoxStyle" TargetType="TextBox">
+        <Setter Property="Margin" Value="3" />
+    </Style>
+    <Style TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}" />
+
 </ResourceDictionary>
