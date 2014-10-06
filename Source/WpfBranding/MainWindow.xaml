@@ -42,7 +42,6 @@
             VerticalContentAlignment="Center"
             TextAlignment="Right"
             IsReadOnly="True"
-            FontSize="50"
             Text="{Binding Input}" />
 
         <!-- Numberic input -->
