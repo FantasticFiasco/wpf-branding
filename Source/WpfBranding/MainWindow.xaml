@@ -7,7 +7,6 @@
     Title="{x:Static localization:Translations.ApplicationName}"
     Height="400"
     Width="300"
-    WindowStartupLocation="CenterScreen"
     ResizeMode="NoResize"
     DataContext="{Binding Main, Source={StaticResource Locator}}">
     
