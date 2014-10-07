@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Windows.Markup;
 
 [assembly: AssemblyTitle("Brand.None")]
 [assembly: AssemblyDescription("")]
@@ -31,9 +30,3 @@ using System.Windows.Markup;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
-[assembly: XmlnsPrefix("http://www.fantasticfiasco.com/wpfbranding/localization", "localization")]
-[assembly: XmlnsDefinition("http://www.fantasticfiasco.com/wpfbranding/localization", "Brand.Localization")]
-
-[assembly: XmlnsPrefix("http://www.fantasticfiasco.com/wpfbranding/styles", "styles")]
-[assembly: XmlnsDefinition("http://www.fantasticfiasco.com/wpfbranding/styles", "Brand.Styles")]
