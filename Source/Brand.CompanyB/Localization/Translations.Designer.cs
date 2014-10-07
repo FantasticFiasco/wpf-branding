@@ -61,7 +61,7 @@ namespace Brand.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CompanyB Calculator.
+        ///   Looks up a localized string similar to Calculator (CompanyB).
         /// </summary>
         public static string ApplicationName {
             get {
