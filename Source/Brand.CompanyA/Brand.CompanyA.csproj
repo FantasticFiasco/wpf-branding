@@ -52,6 +52,12 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Styles\ControlsHelper.cs" />
+    <Compile Include="Styles\MarkupConverter.cs" />
+    <Compile Include="Styles\TextboxHelper.cs" />
+    <Compile Include="Styles\ThicknessToDoubleConverter.cs" />
+    <Compile Include="Styles\ToLowerConverter.cs" />
+    <Compile Include="Styles\TransitionType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Styles\ControlStyles.xaml">
@@ -73,6 +79,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Graphics\App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

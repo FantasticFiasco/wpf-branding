@@ -6,7 +6,10 @@
         <ResourceDictionary Source="pack://application:,,,/Brand.Fallback;component/Styles/ControlStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!-- Styles shamelessly copied from http://www.codeproject.com/Articles/85896/WPF-Customize-your-Application-with-Styles-and-C -->
+    <!--
+        Styles shamelessly copied from http://www.codeproject.com/Articles/85896/WPF-Customize-your-Application-with-Styles-and-C.
+        This projects contains its license.    
+    -->
 
     <!-- CONTROL BACKGROUND -->
     <SolidColorBrush x:Key="BaseColor" Color="#99000000"></SolidColorBrush>
