@@ -14,8 +14,8 @@
     <!-- Brushes -->
     <SolidColorBrush x:Key="BaseColor" Color="#99000000"/>
     <LinearGradientBrush x:Key="LightBackground" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Offset="0" Color="#FF9999AA"/>
-        <GradientStop Offset="1" Color="#FFDDDDFF"/>
+        <GradientStop Offset="0" Color="#FF252AC4"/>
+        <GradientStop Offset="1" Color="#FF1D61C1"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="GlassFX" StartPoint=".5,0" EndPoint=".5,.5">
         <GradientStop Offset="1" Color="#33DDDDDD"/>
