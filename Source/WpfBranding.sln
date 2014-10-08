@@ -13,14 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brand.CompanyB", "Brand.Com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brand.None", "Brand.None\Brand.None.csproj", "{CC4AF6F6-1EE4-455D-98D1-418966F356C0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2A39D3BA-1249-4555-938B-1829CF061860}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brand.Fallback", "Brand.Fallback\Brand.Fallback.csproj", "{A8828CC0-8E37-4FFC-9A71-C2B5C1791913}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{E32C19FA-07A9-4769-9A5C-BC30B77534ED}"
+	ProjectSection(SolutionItems) = preProject
+		Run all brands.bat = Run all brands.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
