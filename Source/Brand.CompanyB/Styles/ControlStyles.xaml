@@ -13,10 +13,7 @@
 
     <!-- Brushes -->
     <SolidColorBrush x:Key="BaseColor" Color="#99000000"/>
-    <LinearGradientBrush x:Key="LightBackground" StartPoint="0,0" EndPoint="1,1">
-        <GradientStop Offset="0" Color="#FF252AC4"/>
-        <GradientStop Offset="1" Color="#FF1D61C1"/>
-    </LinearGradientBrush>
+    <SolidColorBrush x:Key="Background" Color="#5C5C5C"/>
     <LinearGradientBrush x:Key="GlassFX" StartPoint=".5,0" EndPoint=".5,.5">
         <GradientStop Offset="1" Color="#33DDDDDD"/>
         <GradientStop Offset="1" Color="#33000000"/>
@@ -45,7 +42,7 @@
 
     <!-- Window style -->
     <Style x:Key="DefaultWindowStyle" TargetType="{x:Type Window}" BasedOn="{StaticResource DefaultWindowStyle}">
-        <Setter Property="Background" Value="{StaticResource LightBackground}" />
+        <Setter Property="Background" Value="{StaticResource Background}" />
     </Style>
 
     <!-- TextBox style -->
