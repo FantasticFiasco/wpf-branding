@@ -2,7 +2,7 @@
 
 echo Building...
 set MSBUILD=%WINDIR%\Microsoft.NET\Framework\v4.0.30319\MsBuild.exe
-%MSBUILD% WpfBranding.sln /t:Rebuild /p:Configuration=Release
+%MSBUILD% WpfBranding.sln /t:Rebuild /p:Configuration=Release /m
 
 echo.
 echo Copying unbranded binaries...
