@@ -2,7 +2,12 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!-- Merged resources -->
+    <!--
+        This is the CompanyB branded version of the application. Any style in this resource
+        dictionary will override the fallback.
+    -->
+
+    <!-- Merge with fallback styles -->
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Brand.Fallback;component/Styles/ControlStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>

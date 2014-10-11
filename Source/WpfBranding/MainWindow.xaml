@@ -13,6 +13,8 @@
     <!-- Resources -->
     <Window.Resources>
         <ResourceDictionary>
+            
+            <!-- Merge with the branded resource dictionary, i.e. let all branded styles affect the application. -->
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Brand;component/Styles/ControlStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>

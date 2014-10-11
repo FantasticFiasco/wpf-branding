@@ -4,7 +4,12 @@
     xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
     xmlns:local="clr-namespace:Brand.Styles">
 
-    <!-- Merged resources -->
+    <!--
+        This is the CompanyA branded version of the application. Any style in this resource
+        dictionary will override the fallback.
+    -->
+
+    <!-- Merge with fallback styles -->
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Brand.Fallback;component/Styles/ControlStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>

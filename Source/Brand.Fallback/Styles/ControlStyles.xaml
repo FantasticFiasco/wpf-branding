@@ -1,6 +1,11 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--
+        These are the fallback styles, i.e. the styles applied if the brand doesn't supply its own
+        styles for any particular target type.
+    -->
 
     <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Margin" Value="3" />
