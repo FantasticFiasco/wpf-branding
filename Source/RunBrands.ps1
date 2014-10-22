@@ -1,24 +1,31 @@
-﻿# Build
-$msbuild = "$env:windir\Microsoft.NET\Framework\v4.0.30319\MsBuild.exe"
-$rebuild = $msbuild + " WpfBranding.sln /t:Rebuild /p:Configuration=Release /m"
-Invoke-Expression $rebuild
+﻿Build
 
-# Copy unbranded binaries
-New-Item -path . -Name bin\Unbranded -ItemType directory -Force
-Copy-Item WpfBranding\bin\Release\*.exe -Destination bin\Unbranded
-Copy-Item Brand.None\bin\Release\*.dll -Destination bin\Unbranded
+CopyBrand None
+CopyBrand CompanyA
+CopyBrand CompanyB
 
-# Copy CompanyA binaries
-New-Item -path . -Name bin\CompanyA -ItemType directory -Force
-Copy-Item WpfBranding\bin\Release\*.exe -Destination bin\CompanyA
-Copy-Item Brand.CompanyA\bin\Release\*.dll -Destination bin\CompanyA
+RunBrand None
+RunBrand CompanyA
+RunBrand CompanyB
 
-# Copy CompanyB binaries
-New-Item -path . -Name bin\CompanyB -ItemType directory -Force
-Copy-Item WpfBranding\bin\Release\*.exe -Destination bin\CompanyB
-Copy-Item Brand.CompanyB\bin\Release\*.dll -Destination bin\CompanyB
+# Build the solution
+Function Build
+{
+    $msbuild = "$env:windir\Microsoft.NET\Framework\v4.0.30319\MsBuild.exe"
+    $rebuild = $msbuild + " WpfBranding.sln /t:Rebuild /p:Configuration=Release /m"
+    Invoke-Expression $rebuild
+}
 
-# Start all brands
-Start-Process bin\Unbranded\WpfBranding.exe
-Start-Process bin\CompanyA\WpfBranding.exe
-Start-Process bin\CompanyB\WpfBranding.exe
+# Copy specified brand to output directory
+Function CopyBrand ($brand)
+{
+    New-Item -path . -Name bin\$brand -ItemType directory -Force
+    Copy-Item WpfBranding\bin\Release\*.exe -Destination bin\$brand
+    Copy-Item Brand.$brand\bin\Release\*.dll -Destination bin\$brand
+}
+
+# Runs the specified branded application
+Function RunBrand ($brand)
+{
+    Start-Process bin\$brand\WpfBranding.exe
+}
