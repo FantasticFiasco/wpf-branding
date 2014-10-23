@@ -1,4 +1,4 @@
-﻿Build
+Build
 
 CopyBrand None
 CopyBrand CompanyA
