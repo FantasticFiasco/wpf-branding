@@ -1,13 +1,3 @@
-Build
-
-CopyBrand None
-CopyBrand CompanyA
-CopyBrand CompanyB
-
-RunBrand None
-RunBrand CompanyA
-RunBrand CompanyB
-
 Function Build
 {
 <#
@@ -30,11 +20,8 @@ Function CopyBrand ($brand)
     Copy-Item Brand.$brand\bin\Release\*.dll -Destination bin\$brand
 }
 
-Function RunBrand ($brand)
-{
-<#
-    .SYNOPSIS
-    Run the specified branded application.
-#>
-    Start-Process bin\$brand\WpfBranding.exe
-}
+Build
+
+CopyBrand None
+CopyBrand CompanyA
+CopyBrand CompanyB
