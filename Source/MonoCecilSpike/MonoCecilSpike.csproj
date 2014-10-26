@@ -53,6 +53,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Vestris.ResourceLib">
+      <HintPath>..\Thirdparty\Vestris.ResourceLib.1.4\Bin\Vestris.ResourceLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
