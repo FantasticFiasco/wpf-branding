@@ -8,9 +8,9 @@ using System.Windows;
 [assembly: AssemblyTitle("WpfBranding")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-//[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("WpfBranding")]
-//[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
