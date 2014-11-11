@@ -7,11 +7,11 @@ using System.Windows;
 // associated with an assembly.
 [assembly: AssemblyTitle("[PLACEHOLDER]")]
 [assembly: AssemblyDescription("[PLACEHOLDER]")]
-[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyConfiguration("[PLACEHOLDER]")]
 [assembly: AssemblyCompany("[PLACEHOLDER]")]
 [assembly: AssemblyProduct("[PLACEHOLDER]")]
 [assembly: AssemblyCopyright("[PLACEHOLDER]")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("[PLACEHOLDER]")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
