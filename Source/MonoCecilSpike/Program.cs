@@ -5,7 +5,7 @@ namespace MonoCecilSpike
 {
     class Program
     {
-        // TODO: Update version
+        // TODO: Updating version does not work
         // TODO: Update app icon
         // TODO: Make sure attribute is replaced, not only added
         static void Main()
@@ -18,13 +18,27 @@ namespace MonoCecilSpike
             string title = "Some title";
             string description = "Some description";
             string copyright = "Some copyright";
-            
+            string configuration = "Some configuration";
+            string trademark = "Some trademark";
+            string culture = "en-US";
+            string version = "1.2.3.4";
+            string fileVersion = "5.6.7.8";
 
             File.Copy(fileName, newFileName, true);
 
             //BrandResources(fileName, newFileName, copyright, company);
             var monoCecil = new MonoCecil(fileName, newFileName);
-            monoCecil.Brand(company, product, title, description, copyright);
+            monoCecil.Brand(
+                company,
+                product,
+                title,
+                description,
+                copyright,
+                configuration,
+                trademark,
+                culture,
+                version,
+                fileVersion);
         }
 
         //private static void BrandResources(string fileName, string newFileName, string copyright, string company)
