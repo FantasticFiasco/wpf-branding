@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using Mono.Cecil;
 
 namespace MonoCecilSpike
@@ -17,22 +18,31 @@ namespace MonoCecilSpike
             module = assemblyDefinition.MainModule;
         }
 
-        internal void Brand(string copyright)
+        internal void Brand(
+            string company,
+            string product,
+            string title,
+            string decription,
+            string copyright)
         {
-            AddAssemblyCopyright(copyright);
+            AddAttribute<AssemblyCompanyAttribute>(company);
+            AddAttribute<AssemblyProductAttribute>(product);
+            AddAttribute<AssemblyTitleAttribute>(title);
+            AddAttribute<AssemblyDescriptionAttribute>(decription);
+            AddAttribute<AssemblyCopyrightAttribute>(copyright);
 
             assemblyDefinition.Write(newFileName);
         }
 
-        private void AddAssemblyCopyright(string copyright)
+        private void AddAttribute<T>(string value) where T : Attribute
         {
-            ConstructorInfo constructorInfo = typeof(AssemblyCopyrightAttribute)
+            ConstructorInfo constructorInfo = typeof(T)
                 .GetConstructor(new[] { typeof(string) });
-            
+
             MethodReference attributeConstructor = module.Import(constructorInfo);
 
             var attribute = new CustomAttribute(attributeConstructor);
-            attribute.ConstructorArguments.Add(new CustomAttributeArgument(module.TypeSystem.String, copyright));
+            attribute.ConstructorArguments.Add(new CustomAttributeArgument(module.TypeSystem.String, value));
 
             assemblyDefinition.CustomAttributes.Add(attribute);
         }

@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("[PLACEHOLDER]")]
 [assembly: AssemblyProduct("[PLACEHOLDER]")]
-//[assembly: AssemblyCopyright("[PLACEHOLDER]")]
+[assembly: AssemblyCopyright("[PLACEHOLDER]")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -7,19 +7,24 @@ namespace MonoCecilSpike
     {
         // TODO: Update version
         // TODO: Update app icon
+        // TODO: Make sure attribute is replaced, not only added
         static void Main()
         {
             string fileName = Path.Combine(CurrentDirectory, "WpfBranding.exe");
             string newFileName = Path.Combine(CurrentDirectory, "WpfBranding(2).exe");
-            
+
+            string company = "Some company";
+            string product = "Some product";
+            string title = "Some title";
+            string description = "Some description";
             string copyright = "Some copyright";
-            //string company = "Some company";
+            
 
             File.Copy(fileName, newFileName, true);
 
             //BrandResources(fileName, newFileName, copyright, company);
             var monoCecil = new MonoCecil(fileName, newFileName);
-            monoCecil.Brand(copyright);
+            monoCecil.Brand(company, product, title, description, copyright);
         }
 
         //private static void BrandResources(string fileName, string newFileName, string copyright, string company)
