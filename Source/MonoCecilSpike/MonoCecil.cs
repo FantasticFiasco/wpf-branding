@@ -38,8 +38,8 @@ namespace MonoCecilSpike
             SetAttribute<AssemblyCopyrightAttribute>(copyright);
             SetAttribute<AssemblyConfigurationAttribute>(configuration);
             SetAttribute<AssemblyTrademarkAttribute>(trademark);
-            SetAttribute<AssemblyCultureAttribute>(culture);
-            SetAttribute<AssemblyVersionAttribute>(version);
+            //SetAttribute<AssemblyCultureAttribute>(culture); // TODO: Not working
+            //SetAttribute<AssemblyVersionAttribute>(version); // TODO: Not working
             SetAttribute<AssemblyFileVersionAttribute>(fileVersion);
 
             assemblyDefinition.Write(newFileName);
