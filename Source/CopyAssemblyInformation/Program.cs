@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using CopyAssemblyInformation.IL;
 using Plossum.CommandLine;
 
 namespace CopyAssemblyInformation
@@ -33,6 +34,9 @@ namespace CopyAssemblyInformation
             }
             else
             {
+                var copyILInformation = new CopyILInformation(options.Source, options.Target);
+                copyILInformation.Run();
+
                 // TODO: Implement
             }
         }
