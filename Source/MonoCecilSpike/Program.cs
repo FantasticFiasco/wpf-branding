@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using Mono.Cecil;
 using Vestris.ResourceLib;
 
 namespace MonoCecilSpike
@@ -19,7 +20,8 @@ namespace MonoCecilSpike
 
             File.Copy(fileName, newFileName, true);
 
-            BrandResources(fileName, newFileName, copyright, company);
+            //BrandResources(fileName, newFileName, copyright, company);
+            BrandAssembly(fileName, newFileName, copyright);
         }
 
         private static void BrandResources(string fileName, string newFileName, string copyright, string company)
@@ -87,23 +89,23 @@ namespace MonoCecilSpike
             ////versionResource.Resources
         }
 
-        private void BrandAssembly()
+        private static void BrandAssembly(string fileName, string newFileName, string copyright)
         {
             //// http://stackoverflow.com/questions/8388196/adding-custom-attributes-using-mono-cecil
 
 
-            //var assemblyDefinition = AssemblyDefinition.ReadAssembly(fileName);
-            //ModuleDefinition module = assemblyDefinition.MainModule;
+            var assemblyDefinition = AssemblyDefinition.ReadAssembly(fileName);
+            ModuleDefinition module = assemblyDefinition.MainModule;
 
-            //MethodReference attributeConstructor = module.Import(
-            //    typeof(AssemblyCopyrightAttribute).GetConstructor(new[] { typeof(string) }));
+            MethodReference attributeConstructor = module.Import(
+                typeof(AssemblyCopyrightAttribute).GetConstructor(new[] { typeof(string) }));
 
-            //var attribute = new CustomAttribute(attributeConstructor);
-            //attribute.ConstructorArguments.Add(new CustomAttributeArgument(module.TypeSystem.String, "Kalle"));
+            var attribute = new CustomAttribute(attributeConstructor);
+            attribute.ConstructorArguments.Add(new CustomAttributeArgument(module.TypeSystem.String, copyright));
 
-            //assemblyDefinition.CustomAttributes.Add(attribute);
+            assemblyDefinition.CustomAttributes.Add(attribute);
 
-            //assemblyDefinition.Write(Path.Combine(CurrentDirectory, "WpfBranding(2).exe"));
+            assemblyDefinition.Write(Path.Combine(CurrentDirectory, newFileName));
         }
 
         private static string CurrentDirectory
