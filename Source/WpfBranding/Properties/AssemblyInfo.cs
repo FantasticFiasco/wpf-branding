@@ -2,13 +2,13 @@
 using System.Runtime.InteropServices;
 using System.Windows;
 
-[assembly: AssemblyTitle("[PLACEHOLDER]")]
-[assembly: AssemblyDescription("[PLACEHOLDER]")]
-[assembly: AssemblyConfiguration("[PLACEHOLDER]")]
+[assembly: AssemblyTitle("WpfBranding")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("[PLACEHOLDER]")]
 [assembly: AssemblyProduct("[PLACEHOLDER]")]
 [assembly: AssemblyCopyright("[PLACEHOLDER]")]
-[assembly: AssemblyTrademark("[PLACEHOLDER]")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]

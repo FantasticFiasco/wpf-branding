@@ -17,7 +17,12 @@ Function Copy-AssemblyInformation
 	END { }
 	PROCESS
 	{
-        $expression = ".\CopyAssemblyInformation\bin\Release\CopyAssemblyInformation.exe /source=bin\$Brand\Brand.dll /target=bin\$Brand\WpfBranding.exe"
+        $source = "bin\$Brand\Brand.dll"
+
+        $expression = ".\CopyAssemblyInformation\bin\Release\CopyAssemblyInformation.exe /source=$source /target=bin\$Brand\WpfBranding.exe"
+        Invoke-Expression $expression
+
+        $expression = ".\CopyAssemblyInformation\bin\Release\CopyAssemblyInformation.exe /source=$source /target=bin\$Brand\Brand.Fallback.dll"
         Invoke-Expression $expression
     }
 }

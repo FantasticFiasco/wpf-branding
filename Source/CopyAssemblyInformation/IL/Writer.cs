@@ -30,10 +30,7 @@ namespace CopyAssemblyInformation.IL
 
             WriteAttribute<AssemblyCompanyAttribute>(assemblyDefinition, moduleDefinition, assemblyInformation.Company);
             WriteAttribute<AssemblyProductAttribute>(assemblyDefinition, moduleDefinition, assemblyInformation.Product);
-            WriteAttribute<AssemblyTitleAttribute>(assemblyDefinition, moduleDefinition, assemblyInformation.Title);
-            WriteAttribute<AssemblyDescriptionAttribute>(assemblyDefinition, moduleDefinition, assemblyInformation.Description);
             WriteAttribute<AssemblyCopyrightAttribute>(assemblyDefinition, moduleDefinition, assemblyInformation.Copyright);
-            WriteAttribute<AssemblyConfigurationAttribute>(assemblyDefinition, moduleDefinition, assemblyInformation.Configuration);
             WriteAttribute<AssemblyTrademarkAttribute>(assemblyDefinition, moduleDefinition, assemblyInformation.Trademark);
 
             assemblyDefinition.Write(fileName);
