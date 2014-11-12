@@ -7,3 +7,7 @@ Invoke-MsBuild -SolutionPath "WpfBranding.sln" -MSBuildPath "$env:windir\Microso
 Copy-Brand "None"
 Copy-Brand "CompanyA"
 Copy-Brand "CompanyB"
+
+Copy-AssemblyInformation "None"
+Copy-AssemblyInformation "CompanyA"
+Copy-AssemblyInformation "CompanyB"
