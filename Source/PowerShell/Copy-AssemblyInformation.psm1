@@ -1,35 +1,23 @@
-Function Copy-AssemblyInfo
+Function Copy-AssemblyInformation
 {
 <#
     .SYNOPSIS
     Copy assembly information from one assembly to another.
 
-    .PARAMETER Source
-    The file name of the source assembly.
-
-    .PARAMETER Target
-    The file name of the target assembly.
-
-    .PARAMETER ToolPath
-    The file name of CopyAssemblyInformation.exe console application.
+    .PARAMETER Brand
+    The name of the brand to copy assembly information from.
 #>
     [CmdletBinding()]
     param
 	(
         [parameter(Mandatory=$true)]
-        $Source,
-
-        [parameter(Mandatory=$true)]
-        $Target,
-
-        [parameter(Mandatory=$true)]
-        $ToolPath
+        $Brand
     )
     BEGIN { }
 	END { }
 	PROCESS
 	{
-        $expression = "$ToolPath /source=$Source /target=$Target"
+        $expression = ".\CopyAssemblyInformation\bin\Release\CopyAssemblyInformation.exe /source=bin\$Brand\Brand.dll /target=bin\$Brand\WpfBranding.exe"
         Invoke-Expression $expression
     }
 }
