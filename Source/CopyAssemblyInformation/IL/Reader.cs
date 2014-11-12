@@ -28,10 +28,7 @@ namespace CopyAssemblyInformation.IL
             {
                 Company = ReadAttribute<AssemblyCompanyAttribute>(assemblyDefinition),
                 Product = ReadAttribute<AssemblyProductAttribute>(assemblyDefinition),
-                Title = ReadAttribute<AssemblyTitleAttribute>(assemblyDefinition),
-                Description = ReadAttribute<AssemblyDescriptionAttribute>(assemblyDefinition),
                 Copyright = ReadAttribute<AssemblyCopyrightAttribute>(assemblyDefinition),
-                Configuration = ReadAttribute<AssemblyConfigurationAttribute>(assemblyDefinition),
                 Trademark = ReadAttribute<AssemblyTrademarkAttribute>(assemblyDefinition)
             };
 
