@@ -32,6 +32,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoCecilSpike", "MonoCecil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyAssemblyInformation", "CopyAssemblyInformation\CopyAssemblyInformation.csproj", "{837F2A0C-8F88-4718-ACCE-EEC5767F451A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", "{81FF5404-EAF6-45C6-8D82-7E50438920F9}"
+	ProjectSection(SolutionItems) = preProject
+		PowerShell\Copy-AssemblyInformation.psm1 = PowerShell\Copy-AssemblyInformation.psm1
+		PowerShell\Copy-Brand.psm1 = PowerShell\Copy-Brand.psm1
+		PowerShell\Invoke-MsBuild.psm1 = PowerShell\Invoke-MsBuild.psm1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,5 +81,6 @@ Global
 		{E753CA2C-6954-461C-866C-9775280B4C8D} = {C947DD83-2D9F-49CF-9F55-D6D8C77F5504}
 		{9CD2D079-BB4A-404E-A9D7-BAF083B08460} = {C947DD83-2D9F-49CF-9F55-D6D8C77F5504}
 		{837F2A0C-8F88-4718-ACCE-EEC5767F451A} = {E32C19FA-07A9-4769-9A5C-BC30B77534ED}
+		{81FF5404-EAF6-45C6-8D82-7E50438920F9} = {E32C19FA-07A9-4769-9A5C-BC30B77534ED}
 	EndGlobalSection
 EndGlobal
