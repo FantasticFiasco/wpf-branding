@@ -34,10 +34,14 @@ namespace CopyAssemblyInformation
             }
             else
             {
+                Console.WriteLine("Copying assembly information from '{0}' to '{1}'...", options.Source, options.Target);
+
                 var copyILInformation = new CopyILInformation(options.Source, options.Target);
                 copyILInformation.Run();
 
                 // TODO: Implement
+
+                Console.WriteLine();
             }
         }
 
