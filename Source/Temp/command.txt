@@ -1,1 +1,0 @@
-verpatch.exe WpfBranding.exe /s CompanyName "Fantastic Fiasco" /s LegalCopyright "Copyright © Fantastic Fiasco 2014" /s ProductName "WPF Branding"

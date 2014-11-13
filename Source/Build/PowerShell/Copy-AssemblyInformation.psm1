@@ -24,5 +24,7 @@ Function Copy-AssemblyInformation
 
         $expression = ".\Build\CopyAssemblyInformation\bin\Release\CopyAssemblyInformation.exe /source=$source /target=bin\$Brand\Brand.Fallback.dll"
         Invoke-Expression $expression
+		
+		# verpatch.exe WpfBranding.exe /s CompanyName "Fantastic Fiasco" /s LegalCopyright "Copyright © Fantastic Fiasco 2014" /s ProductName "WPF Branding"
     }
 }
