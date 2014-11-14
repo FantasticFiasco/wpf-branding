@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Mono.Cecil;
 
-namespace CopyAssemblyInformation.IL
+namespace CopyAssemblyInformation.IntermediateLanguage
 {
     public class Writer
     {

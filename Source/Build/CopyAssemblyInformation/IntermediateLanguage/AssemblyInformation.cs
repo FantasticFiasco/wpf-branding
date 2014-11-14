@@ -1,4 +1,4 @@
-﻿namespace CopyAssemblyInformation.IL
+﻿namespace CopyAssemblyInformation.IntermediateLanguage
 {
     public class AssemblyInformation
     {

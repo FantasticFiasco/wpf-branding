@@ -61,10 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IL\AssemblyInformation.cs" />
-    <Compile Include="IL\CopyILInformation.cs" />
-    <Compile Include="IL\Reader.cs" />
-    <Compile Include="IL\Writer.cs" />
+    <Compile Include="IntermediateLanguage\AssemblyInformation.cs" />
+    <Compile Include="IntermediateLanguage\CopyILInformation.cs" />
+    <Compile Include="IntermediateLanguage\Reader.cs" />
+    <Compile Include="IntermediateLanguage\Writer.cs" />
     <Compile Include="Options.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
