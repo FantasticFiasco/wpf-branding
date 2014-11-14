@@ -34,10 +34,16 @@ namespace CopyAssemblyInformation
             }
             else
             {
-                Console.WriteLine("Copying assembly information from '{0}' to '{1}'...", options.Source, options.Target);
+                Console.WriteLine(
+                    "Copying intermediate language information from '{0}' to '{1}'...",
+                    options.Source,
+                    options.Target);
 
-                var copyILInformation = new CopyILInformation(options.Source, options.Target);
-                copyILInformation.Run();
+                var copyIntermediateLanguageInformation = new CopyIntermediateLanguageInformation(
+                    options.Source,
+                    options.Target);
+                
+                copyIntermediateLanguageInformation.Run();
 
                 // TODO: Implement
 

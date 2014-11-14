@@ -1,6 +1,6 @@
 ﻿namespace CopyAssemblyInformation.IntermediateLanguage
 {
-    public class AssemblyInformation
+    public class Information
     {
         public string Company { get; set; }
 
