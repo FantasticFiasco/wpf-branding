@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace CopyAssemblyInformation.IL
+namespace CopyAssemblyInformation.IntermediateLanguage
 {
     public class CopyILInformation
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using CopyAssemblyInformation.IL;
+using CopyAssemblyInformation.IntermediateLanguage;
 using Plossum.CommandLine;
 
 namespace CopyAssemblyInformation

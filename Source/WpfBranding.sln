@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brand.None", "Brand.None\Br
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brand.Fallback", "Brand.Fallback\Brand.Fallback.csproj", "{A8828CC0-8E37-4FFC-9A71-C2B5C1791913}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Building", "Building", "{E32C19FA-07A9-4769-9A5C-BC30B77534ED}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Builds", "Builds", "{E32C19FA-07A9-4769-9A5C-BC30B77534ED}"
 	ProjectSection(SolutionItems) = preProject
 		Build.ps1 = Build.ps1
 	EndProjectSection
