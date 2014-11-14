@@ -24,15 +24,13 @@ namespace CopyAssemblyInformation.IntermediateLanguage
         {
             AssemblyDefinition assemblyDefinition = AssemblyDefinition.ReadAssembly(fileName);
 
-            var assemblyInformation = new Information
+            return new Information
             {
                 Company = ReadAttribute<AssemblyCompanyAttribute>(assemblyDefinition),
                 Product = ReadAttribute<AssemblyProductAttribute>(assemblyDefinition),
                 Copyright = ReadAttribute<AssemblyCopyrightAttribute>(assemblyDefinition),
                 Trademark = ReadAttribute<AssemblyTrademarkAttribute>(assemblyDefinition)
             };
-
-            return assemblyInformation;
         }
 
         private static string ReadAttribute<T>(AssemblyDefinition assemblyDefinition) where T : Attribute
