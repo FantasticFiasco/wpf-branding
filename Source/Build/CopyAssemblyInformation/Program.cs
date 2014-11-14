@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using CopyAssemblyInformation.FileVersion;
 using CopyAssemblyInformation.IntermediateLanguage;
 using Plossum.CommandLine;
 
@@ -39,13 +40,16 @@ namespace CopyAssemblyInformation
                     options.Source,
                     options.Target);
 
-                var copyIntermediateLanguageInformation = new CopyIntermediateLanguageInformation(
+                new CopyIntermediateLanguageInformation(options.Source, options.Target)
+                    .Run();
+
+                Console.WriteLine(
+                    "Copying file version information from '{0}' to '{1}'...",
                     options.Source,
                     options.Target);
-                
-                copyIntermediateLanguageInformation.Run();
 
-                // TODO: Implement
+                new CopyFileVersionInformation(options.Source, options.Target)
+                    .Run();
 
                 Console.WriteLine();
             }
