@@ -28,8 +28,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B26164
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoCecilSpike", "MonoCecilSpike\MonoCecilSpike.csproj", "{BF145442-C697-41AA-9391-B0D666389F1C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyAssemblyInformation", "Build\CopyAssemblyInformation\CopyAssemblyInformation.csproj", "{837F2A0C-8F88-4718-ACCE-EEC5767F451A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", "{81FF5404-EAF6-45C6-8D82-7E50438920F9}"
@@ -67,10 +65,6 @@ Global
 		{A8828CC0-8E37-4FFC-9A71-C2B5C1791913}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8828CC0-8E37-4FFC-9A71-C2B5C1791913}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8828CC0-8E37-4FFC-9A71-C2B5C1791913}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF145442-C697-41AA-9391-B0D666389F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF145442-C697-41AA-9391-B0D666389F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF145442-C697-41AA-9391-B0D666389F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF145442-C697-41AA-9391-B0D666389F1C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{837F2A0C-8F88-4718-ACCE-EEC5767F451A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{837F2A0C-8F88-4718-ACCE-EEC5767F451A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{837F2A0C-8F88-4718-ACCE-EEC5767F451A}.Release|Any CPU.ActiveCfg = Release|Any CPU
