@@ -3,4 +3,6 @@ bin
 obj
 *.suo
 *.user
-Thirdparty
+Thirdparty/C5*
+Thirdparty/Mono.Cecil*
+Thirdparty/Plossum.CommandLine*
