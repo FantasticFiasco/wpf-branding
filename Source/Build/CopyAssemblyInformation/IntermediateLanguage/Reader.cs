@@ -20,11 +20,11 @@ namespace CopyAssemblyInformation.IntermediateLanguage
             this.fileName = fileName;
         }
 
-        public AssemblyInformation Read()
+        public Information Read()
         {
             AssemblyDefinition assemblyDefinition = AssemblyDefinition.ReadAssembly(fileName);
 
-            var assemblyInformation = new AssemblyInformation
+            var assemblyInformation = new Information
             {
                 Company = ReadAttribute<AssemblyCompanyAttribute>(assemblyDefinition),
                 Product = ReadAttribute<AssemblyProductAttribute>(assemblyDefinition),

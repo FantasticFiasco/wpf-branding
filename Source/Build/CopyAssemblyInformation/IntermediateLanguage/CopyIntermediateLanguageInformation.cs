@@ -3,12 +3,12 @@ using System.IO;
 
 namespace CopyAssemblyInformation.IntermediateLanguage
 {
-    public class CopyILInformation
+    public class CopyIntermediateLanguageInformation
     {
         private readonly string sourceFileName;
         private readonly string targetFileName;
 
-        public CopyILInformation(string sourceFileName, string targetFileName)
+        public CopyIntermediateLanguageInformation(string sourceFileName, string targetFileName)
         {
             if (sourceFileName == null)
                 throw new ArgumentNullException("sourceFileName");
@@ -26,10 +26,10 @@ namespace CopyAssemblyInformation.IntermediateLanguage
         public void Run()
         {
             var reader = new Reader(sourceFileName);
-            AssemblyInformation sourceAssemblyInformation = reader.Read();
+            Information information = reader.Read();
 
             var writer = new Writer(targetFileName);
-            writer.Write(sourceAssemblyInformation);
+            writer.Write(information);
         }
     }
 }

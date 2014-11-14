@@ -20,18 +20,18 @@ namespace CopyAssemblyInformation.IntermediateLanguage
             this.fileName = fileName;
         }
 
-        public void Write(AssemblyInformation assemblyInformation)
+        public void Write(Information information)
         {
-            if (assemblyInformation == null)
-                throw new ArgumentNullException("assemblyInformation");
+            if (information == null)
+                throw new ArgumentNullException("information");
 
             AssemblyDefinition assemblyDefinition = AssemblyDefinition.ReadAssembly(fileName);
             ModuleDefinition moduleDefinition = assemblyDefinition.MainModule;
 
-            WriteAttribute<AssemblyCompanyAttribute>(assemblyDefinition, moduleDefinition, assemblyInformation.Company);
-            WriteAttribute<AssemblyProductAttribute>(assemblyDefinition, moduleDefinition, assemblyInformation.Product);
-            WriteAttribute<AssemblyCopyrightAttribute>(assemblyDefinition, moduleDefinition, assemblyInformation.Copyright);
-            WriteAttribute<AssemblyTrademarkAttribute>(assemblyDefinition, moduleDefinition, assemblyInformation.Trademark);
+            WriteAttribute<AssemblyCompanyAttribute>(assemblyDefinition, moduleDefinition, information.Company);
+            WriteAttribute<AssemblyProductAttribute>(assemblyDefinition, moduleDefinition, information.Product);
+            WriteAttribute<AssemblyCopyrightAttribute>(assemblyDefinition, moduleDefinition, information.Copyright);
+            WriteAttribute<AssemblyTrademarkAttribute>(assemblyDefinition, moduleDefinition, information.Trademark);
 
             assemblyDefinition.Write(fileName);
         }
