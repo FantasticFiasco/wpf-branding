@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 
-namespace CopyAssemblyInformation.FileVersion
+namespace BrandFile.FileVersion
 {
     public class Reader
     {

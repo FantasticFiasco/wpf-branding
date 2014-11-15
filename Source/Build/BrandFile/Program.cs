@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using CopyAssemblyInformation.FileVersion;
-using CopyAssemblyInformation.IntermediateLanguage;
+using BrandFile.FileVersion;
+using BrandFile.IntermediateLanguage;
 using Plossum.CommandLine;
 
-namespace CopyAssemblyInformation
+namespace BrandFile
 {
     class Program
     {

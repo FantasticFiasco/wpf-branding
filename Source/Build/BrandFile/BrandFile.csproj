@@ -7,8 +7,8 @@
     <ProjectGuid>{837F2A0C-8F88-4718-ACCE-EEC5767F451A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CopyAssemblyInformation</RootNamespace>
-    <AssemblyName>CopyAssemblyInformation</AssemblyName>
+    <RootNamespace>BrandFile</RootNamespace>
+    <AssemblyName>BrandFile</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>

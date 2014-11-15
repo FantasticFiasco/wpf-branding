@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace CopyAssemblyInformation.IntermediateLanguage
+namespace BrandFile.IntermediateLanguage
 {
     public class CopyIntermediateLanguageInformation
     {
