@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace CopyAssemblyInformation.FileVersion
+namespace BrandFile.FileVersion
 {
     public class CopyFileVersionInformation
     {

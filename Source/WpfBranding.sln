@@ -28,7 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B26164
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyAssemblyInformation", "Build\CopyAssemblyInformation\CopyAssemblyInformation.csproj", "{837F2A0C-8F88-4718-ACCE-EEC5767F451A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandFile", "Build\BrandFile\BrandFile.csproj", "{837F2A0C-8F88-4718-ACCE-EEC5767F451A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", "{81FF5404-EAF6-45C6-8D82-7E50438920F9}"
 	ProjectSection(SolutionItems) = preProject

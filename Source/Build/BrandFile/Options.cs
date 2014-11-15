@@ -1,6 +1,6 @@
 ﻿using Plossum.CommandLine;
 
-namespace CopyAssemblyInformation
+namespace BrandFile
 {
     [CommandLineManager(EnabledOptionStyles = OptionStyles.Windows)]
     public class Options

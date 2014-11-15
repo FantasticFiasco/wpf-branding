@@ -3,12 +3,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
-namespace CopyAssemblyInformation.FileVersion
+namespace BrandFile.FileVersion
 {
     public class Writer
     {
         private const string ToolName = "verpatch.exe";
-        private const string ResourceName = "CopyAssemblyInformation.FileVersion." + ToolName;
+        private const string ResourceName = "BrandFile.FileVersion." + ToolName;
 
         private readonly string fileName;
 
