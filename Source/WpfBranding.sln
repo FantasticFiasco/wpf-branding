@@ -32,7 +32,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandFile", "Build\BrandFil
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", "{81FF5404-EAF6-45C6-8D82-7E50438920F9}"
 	ProjectSection(SolutionItems) = preProject
-		Build\PowerShell\Copy-AssemblyInformation.psm1 = Build\PowerShell\Copy-AssemblyInformation.psm1
+		Build\PowerShell\Invoke-BrandFiles.psm1 = Build\PowerShell\Invoke-BrandFiles.psm1
 		Build\PowerShell\Copy-Brand.psm1 = Build\PowerShell\Copy-Brand.psm1
 		Build\PowerShell\Invoke-MsBuild.psm1 = Build\PowerShell\Invoke-MsBuild.psm1
 	EndProjectSection
