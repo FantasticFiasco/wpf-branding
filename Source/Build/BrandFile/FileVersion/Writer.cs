@@ -38,23 +38,7 @@ namespace BrandFile.FileVersion
         {
             ExtractTool();
             RunTool(information);
-        }
-
-        private static void ExtractTool()
-        {
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            
-            using (Stream stream = assembly.GetManifestResourceStream(ResourceName))
-            using (var writer = new FileStream(ToolFilePath, FileMode.Create))
-            {
-                var buffer = new byte[1024];
-
-                int bytesRead;
-                while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
-                {
-                    writer.Write(buffer, 0, bytesRead);
-                }
-            }
+            DeleteTool();
         }
 
         private void RunTool(Information information)
@@ -68,18 +52,41 @@ namespace BrandFile.FileVersion
                 information.Copyright,
                 information.Product);
 
-            var info = new ProcessStartInfo(ToolFilePath, arguments);
-            Process.Start(info);
+            var info = new ProcessStartInfo(ToolFilePath, arguments)
+            {
+                CreateNoWindow = true,
+                UseShellExecute = false
+            };
+            
+            Process process = Process.Start(info);
+            process.WaitForExit();
+        }
+
+        private static void ExtractTool()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+
+            using (Stream stream = assembly.GetManifestResourceStream(ResourceName))
+            using (var writer = new FileStream(ToolFilePath, FileMode.Create))
+            {
+                var buffer = new byte[1024];
+
+                int bytesRead;
+                while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
+                {
+                    writer.Write(buffer, 0, bytesRead);
+                }
+            }
+        }
+
+        private static void DeleteTool()
+        {
+            File.Delete(ToolFilePath);
         }
 
         private static string ToolFilePath
         {
-            get
-            {
-                Assembly assembly = Assembly.GetExecutingAssembly();
-                string directoryName = Path.GetDirectoryName(assembly.Location);
-                return Path.Combine(directoryName, ToolName);
-            }
+            get { return Path.Combine(Path.GetTempPath(), ToolName); }
         }
     }
 }
