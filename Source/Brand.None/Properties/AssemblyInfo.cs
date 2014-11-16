@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Fantastic Fiasco")]
-[assembly: AssemblyProduct("WPF Branding")]
+[assembly: AssemblyProduct("WPF Branding (Fantastic Fiasco)")]
 [assembly: AssemblyCopyright("Copyright © Fantastic Fiasco 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
