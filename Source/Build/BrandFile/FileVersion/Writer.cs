@@ -5,6 +5,9 @@ using System.Reflection;
 
 namespace BrandFile.FileVersion
 {
+    /// <summary>
+    /// Class capable of writing file version resource information.
+    /// </summary>
     public class Writer
     {
         private const string ToolName = "verpatch.exe";
@@ -12,6 +15,12 @@ namespace BrandFile.FileVersion
 
         private readonly string fileName;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Writer"/> class.
+        /// </summary>
+        /// <param name="fileName">
+        /// Name of the file to write file version resourse information to.
+        /// </param>
         public Writer(string fileName)
         {
             if (fileName == null)
@@ -22,6 +31,9 @@ namespace BrandFile.FileVersion
             this.fileName = fileName;
         }
 
+        /// <summary>
+        /// Writes file version resource information.
+        /// </summary>
         public void Write(Information information)
         {
             ExtractTool();

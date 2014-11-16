@@ -3,11 +3,23 @@ using System.IO;
 
 namespace BrandFile.IntermediateLanguage
 {
+    /// <summary>
+    /// Copies brand related IL information from one file to another. 
+    /// </summary>
     public class CopyIntermediateLanguageInformation
     {
         private readonly string sourceFileName;
         private readonly string targetFileName;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopyIntermediateLanguageInformation"/> class.
+        /// </summary>
+        /// <param name="sourceFileName">
+        /// Name of the source file to copy brand information from.
+        /// </param>
+        /// <param name="targetFileName">
+        /// Name of the target file to copy brand information to.
+        /// </param>
         public CopyIntermediateLanguageInformation(string sourceFileName, string targetFileName)
         {
             if (sourceFileName == null)
@@ -23,6 +35,9 @@ namespace BrandFile.IntermediateLanguage
             this.targetFileName = targetFileName;
         }
 
+        /// <summary>
+        /// Copies brand information.
+        /// </summary>
         public void Run()
         {
             var reader = new Reader(sourceFileName);

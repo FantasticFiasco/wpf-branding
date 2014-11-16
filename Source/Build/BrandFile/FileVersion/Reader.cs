@@ -4,10 +4,19 @@ using System.IO;
 
 namespace BrandFile.FileVersion
 {
+    /// <summary>
+    /// Class capable of reading file version resource information.
+    /// </summary>
     public class Reader
     {
         private readonly string fileName;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Reader"/> class.
+        /// </summary>
+        /// <param name="fileName">
+        /// Name of the file to read file version resourse information from.
+        /// </param>
         public Reader(string fileName)
         {
             if (fileName == null)
@@ -18,6 +27,9 @@ namespace BrandFile.FileVersion
             this.fileName = fileName;
         }
 
+        /// <summary>
+        /// Reads file version resource information.
+        /// </summary>
         public Information Read()
         {
             FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(fileName);
