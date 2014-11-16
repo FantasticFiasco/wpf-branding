@@ -6,10 +6,17 @@ using Mono.Cecil;
 
 namespace BrandFile.IntermediateLanguage
 {
+    /// <summary>
+    /// Class capable of writing IL information.
+    /// </summary>
     public class Writer
     {
         private readonly string fileName;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Writer"/> class.
+        /// </summary>
+        /// <param name="fileName">Name of the file to write IL information to.</param>
         public Writer(string fileName)
         {
             if (fileName == null)
@@ -20,6 +27,9 @@ namespace BrandFile.IntermediateLanguage
             this.fileName = fileName;
         }
 
+        /// <summary>
+        /// Writes IL information.
+        /// </summary>
         public void Write(Information information)
         {
             if (information == null)

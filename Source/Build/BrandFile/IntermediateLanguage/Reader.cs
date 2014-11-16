@@ -6,10 +6,17 @@ using Mono.Cecil;
 
 namespace BrandFile.IntermediateLanguage
 {
+    /// <summary>
+    /// Class capable of reading IL information.
+    /// </summary>
     public class Reader
     {
         private readonly string fileName;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Reader"/> class.
+        /// </summary>
+        /// <param name="fileName">Name of the file to read IL information from.</param>
         public Reader(string fileName)
         {
             if (fileName == null)
@@ -20,6 +27,9 @@ namespace BrandFile.IntermediateLanguage
             this.fileName = fileName;
         }
 
+        /// <summary>
+        /// Reads IL information.
+        /// </summary>
         public Information Read()
         {
             AssemblyDefinition assemblyDefinition = AssemblyDefinition.ReadAssembly(fileName);

@@ -36,7 +36,7 @@ namespace BrandFile
             else
             {
                 Console.WriteLine(
-                    "Copying intermediate language information from '{0}' to '{1}'...",
+                    "Copying IL information from '{0}' to '{1}'...",
                     options.Source,
                     options.Target);
 
