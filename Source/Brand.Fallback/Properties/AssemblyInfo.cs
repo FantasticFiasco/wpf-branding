@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Brand.Fallback")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Brand.Fallback")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
+[assembly: AssemblyCompany("[PLACEHOLDER]")]
+[assembly: AssemblyProduct("[PLACEHOLDER]")]
+[assembly: AssemblyCopyright("[PLACEHOLDER]")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
