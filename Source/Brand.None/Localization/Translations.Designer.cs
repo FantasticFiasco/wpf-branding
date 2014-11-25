@@ -61,7 +61,7 @@ namespace Brand.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Calculator.
+        ///   Looks up a localized string similar to WPF Branding.
         /// </summary>
         public static string ApplicationName {
             get {
