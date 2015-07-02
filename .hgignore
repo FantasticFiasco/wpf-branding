@@ -1,8 +1,0 @@
-syntax: glob
-bin
-obj
-*.suo
-*.user
-Thirdparty/C5*
-Thirdparty/Mono.Cecil*
-Thirdparty/Plossum.CommandLine*
