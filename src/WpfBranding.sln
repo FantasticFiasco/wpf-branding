@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBranding", "WpfBranding\WpfBranding.csproj", "{B7FF62FD-A68D-45A5-8B15-DBA905F245A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Brands", "Brands", "{C947DD83-2D9F-49CF-9F55-D6D8C77F5504}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brand.CompanyA", "Brand.CompanyA\Brand.CompanyA.csproj", "{E753CA2C-6954-461C-866C-9775280B4C8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brand.CompanyB", "Brand.CompanyB\Brand.CompanyB.csproj", "{9CD2D079-BB4A-404E-A9D7-BAF083B08460}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brand.None", "Brand.None\Brand.None.csproj", "{CC4AF6F6-1EE4-455D-98D1-418966F356C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brand.Fallback", "Brand.Fallback\Brand.Fallback.csproj", "{A8828CC0-8E37-4FFC-9A71-C2B5C1791913}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Builds", "Builds", "{E32C19FA-07A9-4769-9A5C-BC30B77534ED}"
+	ProjectSection(SolutionItems) = preProject
+		Build.ps1 = Build.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B2616476-332F-4144-89CC-86F331489384}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandFile", "Build\BrandFile\BrandFile.csproj", "{837F2A0C-8F88-4718-ACCE-EEC5767F451A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShell", "PowerShell", "{81FF5404-EAF6-45C6-8D82-7E50438920F9}"
+	ProjectSection(SolutionItems) = preProject
+		Build\PowerShell\Invoke-BrandFiles.psm1 = Build\PowerShell\Invoke-BrandFiles.psm1
+		Build\PowerShell\Copy-Brand.psm1 = Build\PowerShell\Copy-Brand.psm1
+		Build\PowerShell\Invoke-MsBuild.psm1 = Build\PowerShell\Invoke-MsBuild.psm1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{F8DE3B4B-FA57-4EDB-A755-9CCE89059A79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7FF62FD-A68D-45A5-8B15-DBA905F245A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7FF62FD-A68D-45A5-8B15-DBA905F245A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7FF62FD-A68D-45A5-8B15-DBA905F245A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7FF62FD-A68D-45A5-8B15-DBA905F245A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E753CA2C-6954-461C-866C-9775280B4C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E753CA2C-6954-461C-866C-9775280B4C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E753CA2C-6954-461C-866C-9775280B4C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E753CA2C-6954-461C-866C-9775280B4C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CD2D079-BB4A-404E-A9D7-BAF083B08460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CD2D079-BB4A-404E-A9D7-BAF083B08460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CD2D079-BB4A-404E-A9D7-BAF083B08460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CD2D079-BB4A-404E-A9D7-BAF083B08460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC4AF6F6-1EE4-455D-98D1-418966F356C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC4AF6F6-1EE4-455D-98D1-418966F356C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC4AF6F6-1EE4-455D-98D1-418966F356C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC4AF6F6-1EE4-455D-98D1-418966F356C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8828CC0-8E37-4FFC-9A71-C2B5C1791913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8828CC0-8E37-4FFC-9A71-C2B5C1791913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8828CC0-8E37-4FFC-9A71-C2B5C1791913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8828CC0-8E37-4FFC-9A71-C2B5C1791913}.Release|Any CPU.Build.0 = Release|Any CPU
+		{837F2A0C-8F88-4718-ACCE-EEC5767F451A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{837F2A0C-8F88-4718-ACCE-EEC5767F451A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{837F2A0C-8F88-4718-ACCE-EEC5767F451A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{837F2A0C-8F88-4718-ACCE-EEC5767F451A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E753CA2C-6954-461C-866C-9775280B4C8D} = {C947DD83-2D9F-49CF-9F55-D6D8C77F5504}
+		{9CD2D079-BB4A-404E-A9D7-BAF083B08460} = {C947DD83-2D9F-49CF-9F55-D6D8C77F5504}
+		{837F2A0C-8F88-4718-ACCE-EEC5767F451A} = {F8DE3B4B-FA57-4EDB-A755-9CCE89059A79}
+		{81FF5404-EAF6-45C6-8D82-7E50438920F9} = {F8DE3B4B-FA57-4EDB-A755-9CCE89059A79}
+		{F8DE3B4B-FA57-4EDB-A755-9CCE89059A79} = {E32C19FA-07A9-4769-9A5C-BC30B77534ED}
+	EndGlobalSection
+EndGlobal
