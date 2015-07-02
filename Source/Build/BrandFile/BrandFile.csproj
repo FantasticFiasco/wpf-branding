@@ -81,7 +81,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\..\packages\verpatch-bin-1.0.10\verpatch.exe">
+    <EmbeddedResource Include="..\..\Thirdparty\verpatch-bin-1.0.10\verpatch.exe">
       <Link>FileVersion\verpatch.exe</Link>
     </EmbeddedResource>
   </ItemGroup>
